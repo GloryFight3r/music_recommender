@@ -40,13 +40,13 @@ def load_subsets():
     matrixRdataPath = os.path.join(spotify_data, "init_R_matrix.npz")
     mappingsPath = os.path.join(spotify_data, "init_mappings.npz")
 
-    user_item_matrix = load_npz(matrixRdataPath).tolil()
+    user_item_matrix = load_npz(matrixRdataPath)
 
     mappings = np.load(mappingsPath, allow_pickle=True)
     user_index_map_inv = mappings['user_index_map_inv'].item()
     track_index_map_inv = mappings['track_index_map_inv'].item()
 
-    return user_index_map_inv, track_index_map_inv, matrixAdataPath
+    return user_index_map_inv, track_index_map_inv, user_item_matrix
 
 #Some Notes: summed up values in matrix and the shape of the matrices:
 #full_A :   1406552134 (117949, 4825739)
