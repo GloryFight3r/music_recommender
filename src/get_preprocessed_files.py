@@ -40,7 +40,7 @@ def load_subsets():
     matrixRdataPath = os.path.join(spotify_data, "init_R_matrix.npz")
     mappingsPath = os.path.join(spotify_data, "init_mappings.npz")
 
-    user_item_matrix = load_npz(matrixRdataPath)
+    user_item_matrix = load_npz(matrixAdataPath)
 
     mappings = np.load(mappingsPath, allow_pickle=True)
     user_index_map_inv = mappings['user_index_map_inv'].item()
